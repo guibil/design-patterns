@@ -66,6 +66,14 @@ Rectangle(Color)   Circle(Color)           Blue   Red
         }
     }
 
+    public class PixelRenderer : IRenderer
+    {
+        public void RenderCircle(float radius)
+        {
+            Console.WriteLine($"Pixel Rendering... Drawing pixels for circle of radius {radius}");
+        }
+    }
+
     public abstract class Shape
     {
         protected IRenderer renderer;
@@ -101,17 +109,26 @@ Rectangle(Color)   Circle(Color)           Blue   Red
         }
     }
 
-    public class DemoBridge
+    public class DriverBridge
     {
         RasterRenderer raster = new RasterRenderer();
         VectorRenderer vector = new VectorRenderer();
-        public void Execute()
+        public void DrawCircle()
         {
-            
-            var circle = new Circle(vector, 5);
+            IRenderer renderer;// = driverFactory.GetRenderer(Environment.OSVersion.ToString());
+            var circle = new Circle(raster, 5);
             circle.Draw();
             circle.Resize(2);
             circle.Draw();
         }
     }
+
+    public class BridgeExecution
+    {
+        public void Execute()
+        {
+            new DriverBridge().DrawCircle();
+        }
+    }
+
 }

@@ -1,5 +1,7 @@
 ﻿using System;
+using DesignPatterns.Behavioral;
 using DesignPatterns.Creational;
+using DesignPatterns.Structural;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace DesignPatterns
@@ -22,7 +24,9 @@ namespace DesignPatterns
 
             //var t = serviceProvider.GetService<IExecution>();
             //t.Execute();
-            new PizzaBakerDemo().Run();
+            //new PizzaBakerDemo().Run();
+
+            new AdapterExecution().Execute();
 
 
             Console.WriteLine("Hello World!");

@@ -61,7 +61,6 @@ namespace DesignPatterns.Structural
 
     public class DemoComposite
     {
-
         public void Execute()
         {
             // Folder 1 -> file1, file2 and folder2:
@@ -82,6 +81,10 @@ namespace DesignPatterns.Structural
             var folder3 = new Folder();
             var f4 = new File(10);
             folder3.Add(f4);
+
+
+            int size = folder3.getSize();
+            int size2 = f4.getSize();
         }
     }
 }

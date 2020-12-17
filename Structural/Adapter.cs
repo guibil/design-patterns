@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -135,4 +136,23 @@ namespace DesignPatterns.Structural
             return list;
         }
     }
+
+    public class AdapterExecution
+    {
+        public void Execute()
+        {
+            var mysqlSource = new MySqlSource();
+            var list1 = mysqlSource.GetList();
+
+            var msSql = new MsSqlSource();
+            var list2 = msSql.GetList();
+
+            var msexcel = new ExcelSource();
+            var list3 = msexcel.GetList();
+
+            var adapter = new DataAdapter();
+            var combined = adapter.GetList();
+        }
+    }
+
 }
