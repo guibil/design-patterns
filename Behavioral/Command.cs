@@ -16,7 +16,7 @@ namespace DesignPatterns.Behavioral
         queuing tasks, tracking history, and undo/redo functionality in your application. 
         The command pattern is a good choice for implementing 
         retry mechanisms - when your application would like to reattempt connecting to a service 
-        at a later point in time which is not up and running at this moment. 
+        at a later point in time which is not up and running at this moment.  
         The Command pattern is also used in message queuing applications, 
         i.e., in applications that need to recover from data loss.
      
